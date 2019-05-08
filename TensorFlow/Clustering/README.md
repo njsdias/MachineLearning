@@ -91,3 +91,26 @@ any other sample
 - As we assume that the figure is convex and isotropic, it doesn't work very well with noncircle-
 like delimited clusters
 
+### 2.2. k-nn Algorithm
+k-nearest neighbors (k-nn) is a supervised Machine Learning algorithm. k-nn can be implemented in more than one of configurations. One of them is using a Semi Supervised approach where we start with a certain number of already assigned
+samples (labled), and we will later guess the cluster membership based on the characteristics of the
+train set. 
+
+The **k-nn algorithm** can be summarized by the following steps:
+
+1. We place the **previously known samples** on the data structures.
+2. We then **read the next sample to be classified** and **calculate the Euclidean distance** from
+the new sample to every sample of the training set.
+3. We decide the class of the new element by **selecting the class of the nearest sample** by
+Euclidean distance. The k-nn method **requires the vote of the k closest samples.**
+4. We **repeat the procedure** until there are no more remaining samples.
+
+**Pros and cons of k-nn:**
+The advantages of this method are:
+
+- Simplicity; no need for tuning parameters
+- No formal training; we just need more training examples to improve the model
+
+**The disadvantages:**
+- Computationally expensive (All distances between points and every new sample have to
+be calculated)
