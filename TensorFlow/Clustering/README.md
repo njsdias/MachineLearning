@@ -114,3 +114,9 @@ The advantages of this method are:
 **The disadvantages:**
 - Computationally expensive (All distances between points and every new sample have to
 be calculated)
+
+In **k-means**, the initial centers drifted toward the areas that had the most concentrated
+sample numbers, and so divided the data linearly. This is **one of the limitations of the simple
+models.** To cope with nonlinear separability samples, we can
+try other statistical approaches, such as density-based spatial
+clustering of applications with noise (**DBSCAN**).
