@@ -52,7 +52,7 @@ one or more (a D-dimensional vector) explanatory variable (also independent vari
 input variables, features, observed data, observations, attributes, dimensions, and data
 points) denoted as _x_ using a linear function. 
 
-Note that there are no single metrics in terms of regression errors; there are several as follows:
+Note that there are no single **metrics** in terms of regression errors; there are several as follows:
 
 - Mean Squared Error (MSE): It is a measure of how close a fitted line is to data
 points. The smaller the MSE, the closer the fit is to the data.
@@ -73,7 +73,7 @@ observation where all individual differences have equal weight.
 which a mathematical model accounts for the variation of a given dataset.
 
 
-Spark ML pipelines have the following components:
+**Spark ML pipelines** have the following components:
 
 - DataFrame: Used as the central data store where all the original
 data and intermediate results are stored.
