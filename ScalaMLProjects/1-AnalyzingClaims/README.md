@@ -4,6 +4,16 @@ Chapter 1, Analyzing Insurance Severity Claims, shows how to develop a predictiv
 for analyzing insurance severity claims using some widely used regression techniques. We
 will demonstrate how to deploy this model in a production-ready environment.
 
+# Structure of the code
+
+To develope a pipeline with Preprocessing and Machine Learning Algorithm we have two options:
+
+- 1: Put all in one file.scala inside of a _def main_ and run it
+
+- 2: Split the actions by diffrent file.scala: Preprocessing.scala, MLAlg.scala
+
+It is a very personal choice. Here I chosse the second option. For that was created an object with the _def main_ wich have the load sequence of the scala files. This main file has the name _Central.scala_ which call the other scala files in an appropriate seqeunce. For this reason the other scala file dont have the _def main_ function. So, for execute the code you only need to run the Central.scala.  
+
 # Exploratory analysis of the dataset: EDA.scala file
 
 The dataset can be downloaded in: https://www.kaggle.com/c/allstate-claims-severity/data
