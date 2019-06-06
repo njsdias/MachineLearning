@@ -72,3 +72,26 @@ observation where all individual differences have equal weight.
 - Explained variance: In statistics, explained variation measures the proportion to
 which a mathematical model accounts for the variation of a given dataset.
 
+
+Spark ML pipelines have the following components:
+
+- DataFrame: Used as the central data store where all the original
+data and intermediate results are stored.
+
+- Transformer: A transformer transforms one DataFrame into
+another by adding additional feature columns. Transformers are
+stateless, meaning that they don't have any internal memory
+and behave exactly the same each time they are used.
+
+- Estimator: An estimator is some sort of ML model. In contrast to
+a transformer, an estimator contains an internal state
+representation and is highly dependent on the history of the
+data that it has already seen.
+
+- Pipeline: Chains the preceding components, DataFrame,
+Transformer, and Estimator together.
+
+- Parameter: ML algorithms have many knobs to tweak. These
+are called hyperparameters, and the values learned by a ML
+algorithm to fit data are called parameters.
+
