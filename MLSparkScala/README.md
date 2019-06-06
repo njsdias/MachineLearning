@@ -1,10 +1,9 @@
 ### 1. Purpose
-This repository covers the essential of Machine Learning Algorithms that is covered by books of the Data Science.
-In each sub-folder there is a README file that specified the book used for construct the code.
+This repository allows to learn Spark-Scala through Machine Learning Algorithms examples. 
 
-Books:
+Book:
 
-- Building Machine Learning Projects with Tensor Flow
+![book](https://user-images.githubusercontent.com/37953610/58999181-5b03e100-87fc-11e9-8622-0727f57e5a6d.JPG)
      
      
 
