@@ -3,7 +3,7 @@ This repository allows to learn Spark-Scala through Machine Learning Algorithms 
 
 Book:
 
-![book](https://user-images.githubusercontent.com/37953610/58999181-5b03e100-87fc-11e9-8622-0727f57e5a6d.JPG)
+![book](https://user-images.githubusercontent.com/37953610/59001376-3a408900-8806-11e9-9362-7192366eb685.JPG)
      
      
 
