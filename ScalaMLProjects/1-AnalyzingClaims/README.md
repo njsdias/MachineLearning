@@ -212,3 +212,76 @@ The file result_RF.csv contains the loss against each ID, that is, claim.
 ![corr_cont](https://user-images.githubusercontent.com/37953610/59121998-759b9e80-8951-11e9-94f7-0f8db7c623bb.JPG)
 
 ## Model Deployment
+The idea is, as a data scientist, you may have produced an ML model and handed it over to an engineering team in your company for deployment in a productionready environment.
+
+This scenario can easily become a reality by using model persistence—the ability to save and
+load models that come with Spark. Using Spark, you can either:
+
+- Save and load a single model
+
+- Save and load a full pipeline
+
+A single model is pretty simple, but less effective and mainly works on Spark MLlib-based
+model persistence. Since we are more interested in saving the best model, that is, the
+Random Forest regressor model, at first we will fit an Random Forest regressor using Scala,
+save it, and then load the same model back using Scala:
+
+    // Estimator algorithm
+    val model = new RandomForestRegressor()
+      .setFeaturesCol("features")
+      .setLabelCol("label")
+      .setImpurity("gini")
+      .setMaxBins(20)
+      .setMaxDepth(20)
+      .setNumTrees(50)
+
+    fittedModel = rf.fit(trainingData)
+    
+We can now simply call the _write.overwrite().save()_ method to save this model to
+local storage, HDFS, or S3, and the load method to load it right back for future use:
+
+    fittedModel.write.overwrite().save("model/RF_model")
+    val sameModel = CrossValidatorModel.load("model/RF_model")
+    
+Now the thing that we need to know is how to use the restored model for making
+predictions. Here's the answer:
+
+    sameModel.transform(Preproessing.testData)
+      .select("id", "prediction")
+      .withColumnRenamed("prediction", "loss")
+      .coalesce(1)
+      .write.format("com.databricks.spark.csv")
+      .option("header", "true")
+      .save("output/result_RF_reuse.csv")
+      
+The reality is that, in practice, ML workflows consist of many stages, from feature extraction
+and transformation to model fitting and tuning. Spark ML provides pipelines to help users
+construct these workflows. Similarly, a pipeline with the cross-validated model can be
+saved and restored back the same way as we did in the first approach.
+
+We fit the cross-validated model with the training set:
+
+    val cvModel = cv.fit(Preproessing.trainingData)
+
+Then we save the workflow/pipeline:
+
+    cvModel.write.overwrite().save("model/RF_model") 
+   
+Then we restore the same model back:
+
+    val sameCV = CrossValidatorModel.load("model/RF_model")
+Now when you try to restore the same model, Spark will automatically pick
+the best one. Finally, we reuse this model for making a prediction as
+follows:
+
+    sameCV.transform(Preproessing.testData)
+      .select("id", "prediction")
+      .withColumnRenamed("prediction", "loss")
+      .coalesce(1)
+      .write.format("com.databricks.spark.csv")
+      .option("header", "true")
+      .save("output/result_RF_reuse.csv")
+      
+ For info about _Spark-based model deployment for large-scale
+dataset_ see Spark website at _https:/ / spark. apache. org/ docs/ latest/ submittingapplications_ .
+html.
