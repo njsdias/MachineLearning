@@ -7,6 +7,7 @@ import org.apache.log4j._
 
 object EDA { 
   
+  /*
   def createSession(): SparkSession = { 
     val spark = SparkSession 
       .builder 
@@ -16,16 +17,19 @@ object EDA {
       .getOrCreate() 
     return spark 
     }
- 
+ */
   def main(args: Array[String]) {
 
   // Set the log level to only print errors
   Logger.getLogger("org").setLevel(Level.ERROR)
     
-  val spark = createSession()
+  val spark = SparkSessionCreate.createSession()
   import spark.implicits._
+  
   val train = "data/insurance_train.csv"
   
+  /* If you don't specify the inferSchema configuration explicitly,
+   * the float values will be treated as strings.*/
   val trainInput = spark.read
     .option("header", "true")
     .option("inferSchema", "true")
@@ -75,17 +79,9 @@ object EDA {
     spark.sql("SELECT max(insurance.label) as MAX_LOSS FROM insurance").show()
     
     
+    spark.stop()
     
-    
-    
-    
-    
-    
-    
-    
-       
-       
-       
+   
   }
  
 } 
