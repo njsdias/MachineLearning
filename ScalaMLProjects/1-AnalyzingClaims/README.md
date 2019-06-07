@@ -172,7 +172,7 @@ performs badly with an increased number of trees.
 
 **RF parameteres to setting**
 
-Here is the list and it is highy you search more detailed information:
+Here is the list and it is highly recommended that you search for more detailed information:
 
 - number of trees
 
