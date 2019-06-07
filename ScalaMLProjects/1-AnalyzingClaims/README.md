@@ -105,3 +105,81 @@ Transformer, and Estimator together.
 are called hyperparameters, and the values learned by a ML
 algorithm to fit data are called parameters.
 
+
+**Note**
+The preceding code should generate a CSV file named result_LR.csv. If we open the file,
+we should observe the loss against each ID, that is, claim. We will see the contents for both
+LR, RF, and GBT at the end of this chapter.
+
+# GBT regressor for predicting insurance severity claims
+
+In order to minimize a loss function, Gradient Boosting Trees (GBTs) iteratively train
+many decision trees. On each iteration, the algorithm uses the current ensemble to predict
+the label of each training instance.
+
+Then the raw predictions are compared with the true labels. Thus, in the next iteration, the
+decision tree will help correct previous mistakes if the dataset is re-labeled to put more
+emphasis on training instances with poor predictions.
+
+Now, similar to decision trees, GBTs also:
+
+- Handle categorical features (and of course numerical features too)
+
+- Extend to the multiclass classification setting
+
+- Perform both the binary classification and regression (multiclass classification is
+not yet supported)
+
+- Do not require feature scaling
+
+- Capture non-linearity and feature interactions, which are greatly missing in LR,
+such as linear models
+
+**Validation while training:** Gradient boosting can overfit, especially when
+you have trained your model with more trees. In order to prevent this
+issue, it is useful to validate while carrying out the training.
+
+# Random Forest for classification and regression
+
+Random Forest is an ensemble learning technique used for solving supervised learning
+tasks, such as classification and regression. An advantageous feature of Random Forest is
+that it can overcome the overfitting problem across its training dataset. A forest in Random
+Forest usually consists of hundreds of thousands of trees. These trees are actually trained on
+different parts of the same training set.
+
+More technically, an individual tree that grows very deep tends to learn from highly
+unpredictable patterns. This creates overfitting problems on the training sets. Moreover,
+low biases make the classifier a low performer even if your dataset quality is good in terms
+of the features presented. On the other hand, an Random Forest helps to average multiple
+decision trees together with the goal of reducing the variance to ensure consistency by
+computing proximities between pairs of cases.
+
+**GBT or RF?**
+
+- GBTs train one tree at a time, but Random Forest can train
+multiple trees in parallel. So the training time is lower for RF.
+However, in some special cases, training and using a smaller
+number of trees with GBTs is easier and quicker.
+
+- RFs are less prone to overfitting in most cases, so it reduces the
+likelihood of overfitting. In other words, Random Forest
+reduces variance with more trees, but GBTs reduce bias with
+more trees.
+
+- Finally, Random Forest can be easier to tune since performance
+improves monotonically with the number of trees, but GBT
+performs badly with an increased number of trees.
+
+**RF parameteres to setting**
+
+Here is the list and it is highy you search more detailed information:
+
+- number of trees
+
+- impurity criterion
+
+- the maximum depth of the tree
+
+- the maximum number of bins used for splitting the features
+
+- the random seed is used for bootstrapping and choosing feature subsets to avoid the random nature of the results.
