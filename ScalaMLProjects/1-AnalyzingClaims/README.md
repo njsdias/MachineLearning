@@ -183,3 +183,32 @@ Here is the list and it is highly recommended that you search for more detailed 
 - the maximum number of bins used for splitting the features
 
 - the random seed is used for bootstrapping and choosing feature subsets to avoid the random nature of the results.
+
+# Analyse of results
+
+Use python we can extract some insigths from plots related to the Importance of Categorcal features and the Correlation among Continuos features. By graphs we can observe that
+
+- categorical variavels: 20,64,47,70,69 are less important for the model
+
+- all continuos variables have positive correlation with the loss column witch indicates that are not that
+important compared to the categorical ones we have seen in the preceding figure.
+
+So after naively drop some unimportant columns we need train the Random Forest model to observe if there is any reduction in the MAE
+value for both the training and validation set.
+
+    println("Run prediction on the test set")
+    cvModel.transform(Preproessing.testData)
+      .select("id", "prediction")
+      .withColumnRenamed("prediction", "loss")
+      .coalesce(1) // to get all the predictions in a single csv file
+      .write.format("com.databricks.spark.csv")
+      .option("header", "true")
+      .save("output/result_RF.csv")
+      
+The file result_RF.csv contains the loss against each ID, that is, claim.
+
+![cat_import](https://user-images.githubusercontent.com/37953610/59121994-72a0ae00-8951-11e9-83fa-a3439d4ee403.JPG)
+
+![corr_cont](https://user-images.githubusercontent.com/37953610/59121998-759b9e80-8951-11e9-94f7-0f8db7c623bb.JPG)
+
+## Model Deployment
