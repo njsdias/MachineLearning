@@ -82,3 +82,13 @@ classification and regression tasks. One of several main observation is that:
 - the deeper the tree, the more complex the decision rules and the more fitted the model is.
 
 ![dt_pros_cons](https://user-images.githubusercontent.com/37953610/59222160-c6fd9500-8bc0-11e9-9a50-84adf33cd8d4.JPG)
+
+We identify the most important features of the best model are: 
+
+- total_international_num_calls
+
+- total_day_mins
+
+The evaluation returns 87% accuracy but only 73% precision. We can try use RandomForest, XgBoost ML Algortihms and see we can to obtain a better models.
+
+So, the next model that we can to try is **Random Forest**.
