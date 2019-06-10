@@ -91,4 +91,15 @@ We identify the most important features of the best model which are used for dec
 
 The evaluation returns 87% accuracy but only 73% precision. We can try use RandomForest, XgBoost ML Algortihms and see we can to obtain a better models.
 
-So, the next model that we can to try is **Random Forest**.
+So, the next model that we can to try is **Random Forest**. Random Forest is an
+ensemble technique that takes a subset of observations and a subset of variables to build
+decision trees—that is, an ensemble of Decision Trees. We obtained the same result as Decision Trees: Accuracy: 87% and Precision: 73%. 
+
+The next figure we compare the four models by a pie-charts, amalysing the maount of: True Positive, True NEgative, False Positive and False Negative. We can see the best model is the Random Forest Model. To deploy the model
+
+![model_comparasion](https://user-images.githubusercontent.com/37953610/59225600-11830f80-8bc9-11e9-99cb-49519344c751.JPG)
+
+
+For **deploying the model** see the RFModelReuse.scala .
+
+
