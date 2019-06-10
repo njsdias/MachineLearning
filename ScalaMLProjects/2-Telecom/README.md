@@ -81,4 +81,4 @@ classification and regression tasks. One of several main observation is that:
 
 - the deeper the tree, the more complex the decision rules and the more fitted the model is.
 
-![dt_pros_cons](https://user-images.githubusercontent.com/37953610/59222090-9b7aaa80-8bc0-11e9-9e31-b07473180b76.JPG
+![dt_pros_cons](https://user-images.githubusercontent.com/37953610/59222160-c6fd9500-8bc0-11e9-9a50-84adf33cd8d4.JPG)
