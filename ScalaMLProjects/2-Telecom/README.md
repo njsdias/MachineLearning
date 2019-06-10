@@ -83,7 +83,7 @@ classification and regression tasks. One of several main observation is that:
 
 ![dt_pros_cons](https://user-images.githubusercontent.com/37953610/59222160-c6fd9500-8bc0-11e9-9a50-84adf33cd8d4.JPG)
 
-We identify the most important features of the best model are: 
+We identify the most important features of the best model which are used for decision making. So, the two most important reasons why a customer is likely to churn are: 
 
 - total_international_num_calls
 
