@@ -53,7 +53,7 @@ The dataset has the following schema:
 
 By inspection of the features we can see which are the correlations. This help us to dismiss the one of the pair variables that are directly correlated or don't have a smooth distribution.
 
-![correl_features](https://user-images.githubusercontent.com/37953610/59215323-e1c80d80-8bb0-11e9-9adf-943c517e44bf.JPG)
+![correl_features](https://user-images.githubusercontent.com/37953610/59216000-96166380-8bb2-11e9-9050-81b76c391b78.JPG)
 
 By the above graph we considere only the next features for our model:
 
