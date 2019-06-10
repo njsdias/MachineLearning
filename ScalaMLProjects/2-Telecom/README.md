@@ -70,3 +70,15 @@ By the above graph we considere only the next features for our model:
       "total_international_mins",
       "total_international_calls",
       "total_international_num_calls")
+      
+The first ML algortihm apply to the dataset is the **Logistic Regression** that is widely used classifiers to predict a binary response. The model responses are measures of probability. After see the accuracy of the model was 77% and the precision was 58% we need to proceed with testing other models. 
+
+The next model tested was **Support Vector Machine (SVM)** which is also used widely for large-scale classification (that is, binary as well as multinomial) tasks. The linear SVMs in Spark are trained with an L2 regularization, by default. However, it also
+supports L1 regularization, by which the problem itself becomes a linear program. The results were worst than LR: 75% and 56%. 
+
+The next ML algorithm is **Decision Trees** that are commonly considered a supervised learning technique used for solving
+classification and regression tasks. One of several main observation is that: 
+
+- the deeper the tree, the more complex the decision rules and the more fitted the model is.
+
+![dt_pros_cons](https://user-images.githubusercontent.com/37953610/59222090-9b7aaa80-8bc0-11e9-9e31-b07473180b76.JPG
