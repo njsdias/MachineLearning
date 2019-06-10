@@ -55,3 +55,18 @@ By inspection of the features we can see which are the correlations. This help u
 
 ![correl_features](https://user-images.githubusercontent.com/37953610/59215323-e1c80d80-8bb0-11e9-9adf-943c517e44bf.JPG)
 
+By the above graph we considere only the next features for our model:
+
+    val featureCols = Array(
+      "account_length", 
+      "iplanIndex", 
+      "num_voice_mail",
+      "total_day_mins",
+      "total_day_calls",
+      "total_evening_mins",
+      "total_evening_calls",
+      "total_night_mins",
+      "total_night_calls",
+      "total_international_mins",
+      "total_international_calls",
+      "total_international_num_calls")
