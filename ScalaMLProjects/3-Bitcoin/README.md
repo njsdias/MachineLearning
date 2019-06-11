@@ -76,3 +76,47 @@ Therefore, in summary, there are three main components of the system:
 - Scala web service to predict future prices
 
 ![flowchart-prototype](https://user-images.githubusercontent.com/37953610/59273322-dd066680-8c4f-11e9-93c3-a6c8bff2dd39.JPG)
+
+## 2.Download Dataset
+
+The bitstampUSD_1-min_data_2012-01-01_to_2017-10-20.csv. can be downloaded from: 
+
+- https:// www. kaggle. com/ mczielinski/ bitcoin- historical- data/
+
+The dataset has eight columns:
+
+- Timestamp: The time elapsed in seconds since January 1, 1970. It is 1,325,317,920
+for the first row and 1,325,317,920 for the second 1. (Sanity check! The difference
+is 60 seconds).
+
+- Open: The price at the opening of the time interval. It is 4.39 dollars. Therefore it
+is the price of the first trade that happened after Timestamp (1,325,317,920 in the
+first row's case).
+
+- Close: The price at the closing of the time interval.
+
+- High: The highest price from all orders executed during the interval.
+
+- Low: The same as High but it is the lowest price.
+
+- Volume_(BTC): The sum of all Bitcoins that were transferred during the time
+interval. So, take all transactions that happened during the selected interval and
+sum up the BTC values of each of them.
+
+- Volume_(Currency): The sum of all dollars transferred.
+
+- Weighted_Price: This is derived from the volumes of BTC and USD. By dividing
+all dollars traded by all bitcoins, we can get the weighted average price of BTC
+during this minute. So Weighted_Price = Volume_(Currency)/Volume_(BTC).
+
+## 3-Assumptions
+
+- 1: We can ignore the actual price and rather look at its change. As a measure of this, we can take the delta
+between opening and closing prices. If it is positive, it means the price grew during that minute; the price went down if it is negative and stayed the same if delta = 0.
+
+- 2: Price Prediction: We predict the price at T+60 seconds, for instance, based on the
+price at T, T-60s, T-120s and so on.
+
+- 3: The first 600,000 of rows are eliminated from the dataset because they are not informative since the price changes are rare and trading volumes are small.
+
+- 4: We need to Label our data so that we can use a supervised ML algorithm. This is the easiest measure, without concerns about transaction fees.
