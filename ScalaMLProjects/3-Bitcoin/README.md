@@ -81,7 +81,7 @@ Therefore, in summary, there are three main components of the system:
 
 The bitstampUSD_1-min_data_2012-01-01_to_2017-10-20.csv. can be downloaded from: 
 
-- https:// www. kaggle. com/ mczielinski/ bitcoin- historical- data/
+- https://www.kaggle.com/mczielinski/bitcoin-historical-data/
 
 The dataset has eight columns:
 
@@ -120,3 +120,40 @@ price at T, T-60s, T-120s and so on.
 - 3: The first 600,000 of rows are eliminated from the dataset because they are not informative since the price changes are rare and trading volumes are small.
 
 - 4: We need to Label our data so that we can use a supervised ML algorithm. This is the easiest measure, without concerns about transaction fees.
+
+## 4- Setup Eclipse with pom.xml file
+
+- Create a Folder: 3-Bitcoin
+
+- Copy the pom.xml file to the folder created
+
+- File -> Import -> Existing Maven Projects
+
+- Select the folder created -> Finish
+
+- Right click on your project and go to Maven -> Update Project… -> Force Update of Snapshots/Releases
+
+- Right click on your project and go to Properties -> Java Build Path -> Libraries -> Add External jars -> Select your spark/hadoop folder
+
+- Select all jars inside of your spark/hadoop folder and click on "Apply and Close"
+
+- Create a folder inside of project: C“src/main/scala”
+
+- Right click on your project go to Properties -> Java Build Path -> Source -> Add folder
+
+- Select the folder that you created and click on "Apply and Close"
+
+- Right click on Project and go to Configure -> Add Scala Nature
+
+- Right click on your project and go to Properties -> Scala Compiler -> Use Project Settings ->  Choose the last one in the list
+
+- Right click on src/main/scala and select Scala Object
+
+- Fill Name: com.ctw.spark.FileName
+
+- After here add others scala file to your package 
+
+
+## Folder Structure
+
+![folder_structure](https://user-images.githubusercontent.com/37953610/59293155-83fdf900-8c76-11e9-9cfa-7b783e53665c.JPG)
