@@ -24,6 +24,17 @@ including but not limited to:
 
 - Calling-circle data and support call center statistics
 
+With this example we will see:
+- how to develop an ML project to predict whether a customer is likely to cancel their subscription or not
+
+- analyzed what types of customer data are typically used to do preliminary analysis of the data
+
+- develop the models: Logistic Regression, Support Vector Machine, Decision Trees and Random Forest.
+
+- how to choose which model to use for a production-ready environment.
+
+- use the model to develop a real-life predictive model. 
+
 The churn-80 and churn-20 datasets can be downloaded from the following links, respectively:
 
 - https:/ / bml- data. s3. amazonaws. com/ churn- bigml- 80. csv
