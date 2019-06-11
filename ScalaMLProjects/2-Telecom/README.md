@@ -100,6 +100,47 @@ The next figure we compare the four models by a pie-charts, amalysing the maount
 ![model_comparasion](https://user-images.githubusercontent.com/37953610/59225600-11830f80-8bc9-11e9-99cb-49519344c751.JPG)
 
 
-For **deploying the model** see the RFModelReuse.scala .
+For **deploying the model** see the RFModelReuse.scala we need save the cross-validated model for upload that by the deployment process. In the directory will include.
 
+- The best model
 
+       // Save the workflow
+       cvModel.write.overwrite().save("model/RF_model_churn")
+
+- Estimator
+
+- Evaluator
+
+- The metadata of the training itself
+
+Now the next task will be restoring the same model, as follows:
+
+    // Load the workflow back
+    val cvModel = CrossValidatorModel.load("model/ RF_model_churn/")
+    
+Finally, we need to transform the test set to the model pipeline that maps the features
+according to the same mechanism we described in the preceding feature engineering step:
+
+    val predictions = cvModel.transform(Preprocessing.testSet)
+
+Finally, we evaluate the restored model:
+
+    val evaluator = new BinaryClassificationEvaluator()
+        .setLabelCol("label")
+        .setRawPredictionCol("prediction")
+
+    val accuracy = evaluator.evaluate(predictions)
+    println("Accuracy: " + accuracy)
+    evaluator.explainParams()
+
+    val predictionAndLabels = predictions
+        .select("prediction", "label")
+        .rdd.map(x => (x(0).asInstanceOf[Double], x(1)
+        .asInstanceOf[Double]))
+
+    val metrics = new BinaryClassificationMetrics(predictionAndLabels)
+    val areaUnderPR = metrics.areaUnderPR
+    println("Area under the precision-recall curve: " + areaUnderPR)
+
+    val areaUnderROC = metrics.areaUnderROC
+    println("Area under the receiver operating characteristic (ROC) curve: " + areaUnderROC)
