@@ -83,6 +83,11 @@ million single nucleotide polymorphisms (SNPs), 3.6 million short insertions/del
 (indels), and 60,000 structural variants) have been identified as high-quality haplotypes. 
 As a result, the third phase release leaves 84.4 million variants.
 
+The 24 VCF files contribute 820 GB of data. But for make the demonstration we will use 
+the genetic variant of chromosome Y with size around 160 MB. You can
+download all the VCF files as well as the panel file from ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/
+searching for ALL.chrY.phase3_integrated_v2a.20130502.genotypes.vcf
+
 ## 1.5 Steps using the technologies
 Large-scale data from release 3 of the 1000 Genomes project contributes to 820 GB of data.
 Therefore, ADAM and Spark are used to pre-process and prepare the data (that is, training,
@@ -96,6 +101,8 @@ that we used were SNPs and indels.
 
 Using H2O, it's possible to develop machine learning and DL applications with
 a wide range of languages, such as Java, Scala, Python, and R. It also has the ability to interface with Spark, HDFS, SQL, and NoSQL databases. In short, H2O works with R, Python, and Scala on Hadoop/Yarn, Spark, or laptop. On the other hand, Sparkling water combines the fast, scalable ML algorithms of H2O with the capabilities of Spark. It drives the computation from Scala/R/Python and utilizes the H2O flow UI. In short, Sparkling water = H2O + Spark.
+
+
 
 **How is H2O integrates with Spark?** 
 
@@ -119,3 +126,35 @@ column of which represents a data item and is independently compressed to provid
 best compression ratio.
 
 ![data_spark_h2o](https://user-images.githubusercontent.com/37953610/59368337-e9fd8580-8d35-11e9-8150-ec79cad109f8.JPG)
+
+## 1.6 ADAM
+
+ADAM is a genomics analysis platform with specialized file formats built using Apache Avro,
+Apache Spark and Parquet. However, large-scale data processing solutions such as ADAM-Spark can be applied
+directly to the output data from a sequencing pipeline, that is, after quality control,
+mapping, read preprocessing, and variant quantification using single sample data. Some
+examples are DNA variants for DNA sequencing, read counts for RNA sequencing, and so
+on. In this study, ADAM is used to achieve the scalable genomics data analytics platform with
+support for the VCF file format so that we can transform genotype-based RDD into a Spark
+DataFrame.
+
+# 2. Programming Environment
+
+In this section, we describe how to configure our programming environment so that we can
+interoperate with Spark, H2O, and Adam. Note that using H2O on a laptop or desktop is
+quite resource intensive. Therefore, make sure that your laptop has at least 16 GB of RAM
+and enough storage. We need build a pom.xml file with the depencies of the project using 
+Maven or SBT procedures. The pom.xml provided is Maven builded.
+
+We need install the H2O:
+
+- Download the Latest Stable Release H2O from https://www.h2o.ai/download/ .
+
+- Then unzip it; it contains everything you need to get started.
+
+- From your terminal/command prompt, run the .jar using java -jar h2o.jar.
+
+- Point your browser to http://localhost:54321:
+
+
+
