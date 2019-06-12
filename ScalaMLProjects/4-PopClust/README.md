@@ -166,5 +166,59 @@ You can see a youtube video for explanation:
 
 - https://www.youtube.com/watch?v=-Stzb7n2iKQ
 
+# 3. Scala Files
 
+
+Follow this steps to integrate a pom file into your Scala project:
+
+- Create a Folder for your project: 4-PopCluster
+
+- Copy the pom.xml file to the folder created
+
+- File -> Import -> Existing Maven Projects
+
+- Select the folder created -> Finish
+
+- Right click on your project and go to Maven -> Update Project… -> Force Update of Snapshots/Releases
+
+- Right click on your project and go to Properties -> Java Build Path -> Libraries -> Add External jars -> Select your spark/hadoop folder
+
+- Select all jars inside of your spark/hadoop folder and click on "Apply and Close"
+
+- Create a folder inside of project: C“src/main/scala”
+
+- Right click on your project go to Properties -> Java Build Path -> Source -> Add folder
+
+- Select the folder that you created and click on "Apply and Close"
+
+- Right click on Project and go to Configure -> Add Scala Nature
+
+- Right click on your project and go to Properties -> Scala Compiler -> Use Project Settings ->  Choose the last one in the list
+
+- Right click on src/main/scala and select New -> Package and give the name: com.orgname.spark
+
+- Right click on src/main/scala and select Scala Object
+
+- Fill Name: com.ctw.spark.FileName
+
+- After here add others object scala file to your package 
+
+After this create a /data folder and store there the .vcf and .panel files previously downloaded by you. Start with creating the file PopGenomicsClassificationSpark.scala .
+
+Remember: Spark expects
+
+- two columns (that is, features and label) for supervised training model,
+
+- one columns (that is, features) for unsupervised training model. 
+
+
+In the PopGenomicsClassificationSpark.scala we created a SparkDataFrame and now at PopStratClassification.scala we need to do some additional conversion. We use the asH2OFrame() method to convert the Spark DataFrame into an H2O frame:
+
+    val sqlContext = sparkSession.sqlContext
+    val schemaDF = sqlContext.createDataFrame(rowRDD, header)
+    
+    val h2oContext = H2OContext.getOrCreate(sparkSession)
+    import h2oContext.implicits._
+     
+    val dataFrame = h2oContext.asH2OFrame(schemaDF)
 
