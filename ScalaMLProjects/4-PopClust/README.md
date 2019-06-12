@@ -97,4 +97,25 @@ that we used were SNPs and indels.
 Using H2O, it's possible to develop machine learning and DL applications with
 a wide range of languages, such as Java, Scala, Python, and R. It also has the ability to interface with Spark, HDFS, SQL, and NoSQL databases. In short, H2O works with R, Python, and Scala on Hadoop/Yarn, Spark, or laptop. On the other hand, Sparkling water combines the fast, scalable ML algorithms of H2O with the capabilities of Spark. It drives the computation from Scala/R/Python and utilizes the H2O flow UI. In short, Sparkling water = H2O + Spark.
 
+**How is H2O integrates with Spark?** 
 
+Spark has master and worker servers; the workers create executors to do the actual work:
+
+- 1: Sparkling water JAR is sent to the Spark master by submit command
+
+- 2: master starts the workers and distributes the JAR file
+
+- 3: workers start the executor JVMs to carry out the work
+
+- 4: executor starts an H2O instance
+
+![h2o_spark](https://user-images.githubusercontent.com/37953610/59367914-051bc580-8d35-11e9-97cb-cc5735ff8277.JPG)
+
+**How does data pass between Spark and H2O?**
+
+A new H2O RDD data structure has been
+created for H2O and Sparkling water. It is a layer based at the top of an H2O frame, each
+column of which represents a data item and is independently compressed to provide the
+best compression ratio.
+
+![data_spark_h2o](https://user-images.githubusercontent.com/37953610/59368337-e9fd8580-8d35-11e9-8150-ec79cad109f8.JPG)
