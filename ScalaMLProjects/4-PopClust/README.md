@@ -85,8 +85,14 @@ As a result, the third phase release leaves 84.4 million variants.
 
 The 24 VCF files contribute 820 GB of data. But for make the demonstration we will use 
 the genetic variant of chromosome Y with size around 160 MB. You can
-download all the VCF files as well as the panel file from ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/
-searching for ALL.chrY.phase3_integrated_v2a.20130502.genotypes.vcf
+download all the VCF files as well as the panel file from 
+ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/
+searching for
+
+- ALL.chrY.phase3_integrated_v2a.20130502.genotypes.vcf
+
+- integrated_call_male_samples_v3.20130502.ALL.panel
+
 
 ## 1.5 Steps using the technologies
 Large-scale data from release 3 of the 1000 Genomes project contributes to 820 GB of data.
