@@ -152,15 +152,19 @@ quite resource intensive. Therefore, make sure that your laptop has at least 16 
 and enough storage. We need build a pom.xml file with the depencies of the project using 
 Maven or SBT procedures. The pom.xml provided is Maven builded.
 
-We need install the H2O:
+We need install the H2O. Please, follow the instructions that are in:
+
+- http://artifacts.h2o.ai.s3.amazonaws.com/releases/ai/h2o/dai/rel-1.6.2-9/docs/userguide/install/windows.html
 
 - Download the Latest Stable Release H2O from https://www.h2o.ai/download/ .
-
-- Then unzip it; it contains everything you need to get started.
 
 - From your terminal/command prompt, run the .jar using java -jar h2o.jar.
 
 - Point your browser to http://localhost:54321:
+
+You can see a youtube video for explanation:
+
+- https://www.youtube.com/watch?v=-Stzb7n2iKQ
 
 
 
