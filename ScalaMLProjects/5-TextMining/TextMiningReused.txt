@@ -1,0 +1,111 @@
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/Users/ctw00071/.m2/repository/org/slf4j/slf4j-log4j12/1.7.16/slf4j-log4j12-1.7.16.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/C:/spark/spark-2.3.0-bin-hadoop2.7/jars/slf4j-log4j12-1.7.16.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+19/06/13 17:53:55 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/Users/ctw00071/.m2/repository/org/apache/parquet/parquet-format/2.3.1/parquet-format-2.3.1.jar!/shaded/parquet/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/C:/spark/spark-2.3.0-bin-hadoop2.7/jars/parquet-format-2.3.1.jar!/shaded/parquet/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [shaded.parquet.org.slf4j.helpers.NOPLoggerFactory]
+19/06/13 17:54:01 WARN SparkSession$Builder: Using an existing SparkSession; some configuration may not take effect.
+19/06/13 17:54:02 WARN PTBLexer: Untokenizable: � (U+FFFD, decimal: 65533)
+Reading POS tagger model from edu/stanford/nlp/models/pos-tagger/english-left3words/english-left3words-distsim.tagger ... done [0,4 sec].
++--------------------+
+|                docs|
++--------------------+
+|basis  valine trn...|
++--------------------+
+
+
+Training corpus summary:
+-------------------------------
+Training set size: 1 documents
+Vocabulary size: 14381 terms
+Number of tockens: 14381 tokens
+Preprocessing time: 10.260829563 sec
+-------------------------------
+
+Finished training LDA model.  Summary:
+Training time: 22.868863716 sec
+The average log likelihood of the training data: -917205.5809589977
+
+5
+5 topics:
+TOPIC 0
+------------------------------
+rrb	1.8083352174633915E-4
+lrb	1.808314855141904E-4
+sequence	1.8056354201620667E-4
+gene	1.80428641991879E-4
+cell	1.8038716300731888E-4
+protein	1.8031828833052252E-4
+study	1.8004351781020534E-4
+site	1.7969031399089146E-4
+result	1.7963365589382415E-4
+region	1.7961264136667082E-4
+----------------------------
+weight: 0.0018023427716680482
+
+TOPIC 1
+------------------------------
+rrb	1.8083352174633915E-4
+lrb	1.808314855141904E-4
+sequence	1.8056354201620667E-4
+gene	1.80428641991879E-4
+cell	1.8038716300731888E-4
+protein	1.8031828833052252E-4
+study	1.8004351781020534E-4
+site	1.7969031399089146E-4
+result	1.7963365589382415E-4
+region	1.7961264136667082E-4
+----------------------------
+weight: 0.003604685543336097
+
+TOPIC 2
+------------------------------
+rrb	0.016724214449042155
+lrb	0.016635632618174235
+sequence	0.009797115296785364
+gene	0.008114060529072768
+cell	0.007706584113347788
+protein	0.0071130858573125
+study	0.005438889300025409
+site	0.004172169181866958
+result	0.004021580079774022
+region	0.003968430985116289
+----------------------------
+weight: 0.08729644795385359
+
+TOPIC 3
+------------------------------
+rrb	1.8083352174633915E-4
+lrb	1.808314855141904E-4
+sequence	1.8056354201620667E-4
+gene	1.80428641991879E-4
+cell	1.8038716300731888E-4
+protein	1.8031828833052252E-4
+study	1.8004351781020534E-4
+site	1.7969031399089146E-4
+result	1.7963365589382415E-4
+region	1.7961264136667082E-4
+----------------------------
+weight: 0.08909879072552164
+
+TOPIC 4
+------------------------------
+rrb	1.8083352174633993E-4
+lrb	1.8083148551419122E-4
+sequence	1.8056354201620748E-4
+gene	1.8042864199187982E-4
+cell	1.803871630073197E-4
+protein	1.8031828833052333E-4
+study	1.800435178102061E-4
+site	1.7969031399089222E-4
+result	1.7963365589382496E-4
+region	1.7961264136667163E-4
+----------------------------
+weight: 0.09090113349718972
+
+Picked up _JAVA_OPTIONS: -Xmx4096M -Xms4096M 
