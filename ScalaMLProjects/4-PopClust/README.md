@@ -205,6 +205,9 @@ Follow this steps to integrate a pom file into your Scala project:
 
 After this create a /data folder and store there the .vcf and .panel files previously downloaded by you. Start with creating the file PopGenomicsClassificationSpark.scala .
 
+
+![folder_structure](https://user-images.githubusercontent.com/37953610/59394679-7fba0480-8d78-11e9-9d2c-a89d83746ccf.JPG)
+
 # 4. Machine Learning Models
 
 Remember: Spark expects
