@@ -1,0 +1,121 @@
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/Users/ctw00071/.m2/repository/org/slf4j/slf4j-log4j12/1.7.16/slf4j-log4j12-1.7.16.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/C:/spark/spark-2.3.0-bin-hadoop2.7/jars/slf4j-log4j12-1.7.16.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+19/06/13 16:06:07 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Reading POS tagger model from edu/stanford/nlp/models/pos-tagger/english-left3words/english-left3words-distsim.tagger ... done [0,6 sec].
++--------------------+
+|                docs|
++--------------------+
+|    smile nice   ...|
+|  askin they slan...|
+|year  four     we...|
+| shock culture re...|
+|jadi tadi    jala...|
+|smooth  awesome j...|
+|Kimi    should in...|
+|feel   fizzy woul...|
+|  overthink  swim...|
+|  glad tonight th...|
+| soccer  best    ...|
+|hahaha   Night Zz...|
+|  thank  that bro...|
++--------------------+
+
+
+Training corpus summary:
+-------------------------------
+Training set size: 13 documents
+Vocabulary size: 9326 terms
+Number of tockens: 16050 tokens
+Preprocessing time: 13.614452009 sec
+-------------------------------
+
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/Users/ctw00071/.m2/repository/org/apache/parquet/parquet-format/2.3.1/parquet-format-2.3.1.jar!/shaded/parquet/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/C:/spark/spark-2.3.0-bin-hadoop2.7/jars/parquet-format-2.3.1.jar!/shaded/parquet/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [shaded.parquet.org.slf4j.helpers.NOPLoggerFactory]
+Finished training LDA model.  Summary:
+Training time: 23.06784351 sec
+The average log likelihood of the training data: -19343.67072052066
+
+5
+5 topics:
+TOPIC 0
+------------------------------
+surprise	4.7022863762715106E-4
+cocktail	4.4886445596455576E-4
+rrb	4.3395479433845034E-4
+lrb	4.290349379629057E-4
+project	4.2538174354895067E-4
+happy	4.227947008786087E-4
+post	4.2068008305102834E-4
+alabama	4.192797583881623E-4
+minute	4.189706898427604E-4
+call	4.187476116567146E-4
+----------------------------
+weight: 0.004307937413259288
+
+TOPIC 1
+------------------------------
+surprise	4.702286348976507E-4
+cocktail	4.48864415469716E-4
+rrb	4.339547969154571E-4
+lrb	4.290349409500043E-4
+project	4.2538174881156724E-4
+happy	4.2279470327659353E-4
+post	4.206800868757127E-4
+alabama	4.192797162249671E-4
+minute	4.1897068045951004E-4
+call	4.187476106319093E-4
+----------------------------
+weight: 0.008615874747772378
+
+TOPIC 2
+------------------------------
+rrb	0.014389842315416436
+smile	0.014280391613387261
+lrb	0.00828264844695169
+love	0.008159647324389912
+time	0.007900926208207952
+people	0.005908328602663986
+month	0.005277894817479351
+feel	0.004500145304904647
+hope	0.004315780243121876
+happy	0.004281510633580847
+----------------------------
+weight: 0.08591299025787633
+
+TOPIC 3
+------------------------------
+yang	0.02322875364280332
+grin	0.022972647797506233
+kita	0.012289957597126588
+rrb	0.011336894515548668
+udah	0.011264521013071451
+nggak	0.009213738114195768
+smile	0.008935587828913821
+kalo	0.0085301807115008
+sama	0.0085301807115008
+bisa	0.007504893839738643
+----------------------------
+weight: 0.20972034602978243
+
+TOPIC 4
+------------------------------
+surprise	4.7022863561369324E-4
+cocktail	4.4886442636500563E-4
+rrb	4.339547962093581E-4
+lrb	4.2903494014619506E-4
+project	4.2538174738483415E-4
+happy	4.227947026086381E-4
+post	4.206800858482107E-4
+alabama	4.192797275719509E-4
+minute	4.189706829731211E-4
+call	4.1874761089083376E-4
+----------------------------
+weight: 0.21402828338539426
+
+Picked up _JAVA_OPTIONS: -Xmx4096M -Xms4096M 
