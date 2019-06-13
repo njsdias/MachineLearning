@@ -1,12 +1,18 @@
-### 1. Purpose
-This repository allows to learn Spark-Scala through Machine Learning Algorithms examples. 
+# 1. Developing Model-based Movie Recommendation Engines
 
-Through 11 end-to-end projects, you will be acquainted with popular machine
-learning libraries such as Spark ML, H2O, Zeppelin, DeepLearning4j, and MXNet.
+In this chapter, we will see two end-to-end projects and develop a model for **item-based
+collaborative filtering** for movie similarity measurement and a **model-based movie
+recommendation engine** with Spark that recommends movies for new users. We will see
+how to interoperate between ALS and matrix factorization (MF) for these two scalable
+movie recommendation engines. We will use the movie lens dataset for the project. Finally,
+we will see how to deploy the best model in production.
 
-Book:
+In a nutshell, we will learn the following topics through two end-to-end projects:
 
-![book](https://user-images.githubusercontent.com/37953610/59036597-85d74f00-8867-11e9-9c49-4e3aefe4f130.JPG)
+- Recommendation system: how and why?
 
-     
+- Item-based collaborative filtering for movie similarity
 
+- Model-based movie recommendation with Spark
+
+- Model deployment
