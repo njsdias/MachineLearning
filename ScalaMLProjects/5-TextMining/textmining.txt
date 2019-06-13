@@ -1,0 +1,122 @@
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/Users/ctw00071/.m2/repository/org/slf4j/slf4j-log4j12/1.7.16/slf4j-log4j12-1.7.16.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/C:/spark/spark-2.3.0-bin-hadoop2.7/jars/slf4j-log4j12-1.7.16.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+19/06/13 15:42:55 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Reading POS tagger model from edu/stanford/nlp/models/pos-tagger/english-left3words/english-left3words-distsim.tagger ... done [0,6 sec].
++--------------------+
+|                docs|
++--------------------+
+|    smile nice   ...|
+|  askin they slan...|
+|year  four     we...|
+| shock culture re...|
+|jadi tadi    jala...|
+|smooth  awesome j...|
+|Kimi    should in...|
+|feel   fizzy woul...|
+|  overthink  swim...|
+|  glad tonight th...|
+| soccer  best    ...|
+|hahaha   Night Zz...|
+|  thank  that bro...|
+|serious latterly ...|
++--------------------+
+
+
+Training corpus summary:
+-------------------------------
+Training set size: 14 documents
+Vocabulary size: 9329 terms
+Number of tockens: 16069 tokens
+Preprocessing time: 14.33523388 sec
+-------------------------------
+
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/Users/ctw00071/.m2/repository/org/apache/parquet/parquet-format/2.3.1/parquet-format-2.3.1.jar!/shaded/parquet/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/C:/spark/spark-2.3.0-bin-hadoop2.7/jars/parquet-format-2.3.1.jar!/shaded/parquet/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [shaded.parquet.org.slf4j.helpers.NOPLoggerFactory]
+Finished training LDA model.  Summary:
+Training time: 21.970740571 sec
+The average log likelihood of the training data: -17976.005167986845
+
+5
+5 topics:
+TOPIC 0
+------------------------------
+regard	0.0036663080321397883
+follow	0.0024225058632576938
+downward	0.0018714640333238148
+yourselve	0.0018714640333238148
+correspond	0.0018714640333238148
+accord	0.0018109064877919882
+mon	0.0017953391901155565
+associate	0.0017365285570972188
+tend	0.0016844600544212989
+greeting	0.0016701777605983856
+----------------------------
+weight: 0.020400618045393375
+
+TOPIC 1
+------------------------------
+rrb	0.014384246918301369
+smile	0.014274837890682223
+lrb	0.008279427479418728
+love	0.00815647008424952
+time	0.007897849862158447
+people	0.005906028892205582
+month	0.005275840239994609
+feel	0.004531865414179592
+hope	0.004314099531906697
+happy	0.00427984457956252
+----------------------------
+weight: 0.09770112893805266
+
+TOPIC 2
+------------------------------
+regard	0.0036663080247970005
+follow	0.0024225058571618174
+downward	0.0018714640282320241
+yourselve	0.0018714640282320241
+correspond	0.0018714640282320241
+accord	0.0018109064828635965
+mon	0.0017953391852270557
+associate	0.0017365285523698296
+tend	0.0016844600498344764
+greeting	0.0016701777562405525
+----------------------------
+weight: 0.11810174693124306
+
+TOPIC 3
+------------------------------
+yang	0.02320645532665652
+grin	0.022950565709942035
+kita	0.012278159903222334
+rrb	0.011325917490122099
+udah	0.011253707680135767
+nggak	0.009204893416726588
+smile	0.00892692296024498
+kalo	0.0085219921905096
+sama	0.0085219921905096
+bisa	0.00749768953630416
+----------------------------
+weight: 0.24179004333561674
+
+TOPIC 4
+------------------------------
+regard	0.0036663080312446033
+follow	0.0024225058624886254
+downward	0.0018714640326890233
+yourselve	0.0018714640326890233
+correspond	0.0018714640326890233
+accord	0.0018109064871775847
+mon	0.001795339189506131
+associate	0.0017365285565078608
+tend	0.001684460053849479
+greeting	0.001670177760023929
+----------------------------
+weight: 0.262190661374482
+
+Picked up _JAVA_OPTIONS: -Xmx4096M -Xms4096M 
