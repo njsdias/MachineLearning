@@ -89,10 +89,10 @@ You need create a stopWord.txt file. It contains the english stop words. For exa
 
 - https://gist.github.com/larsyencken/1440509
 
-The model of the project was saved in _textmining.txt_ file. There we observe 
+The model of the project was saved in _textmining.txt_ file.  
 
-After run the _topicModellingwithLDA.scala_ file **the structure of the project** is:
+After run the _topicModellingwithLDA.scala_ file **the structure of the project** can be seen in the figure. At folder _data/docs_ we stored the text files and at folder _data/stopwords_ we stored the _stopWords.txt_ file. 
 
-![srt_proj](https://user-images.githubusercontent.com/37953610/59443015-31961700-8df3-11e9-809b-3a17128675e6.JPG)
+![srt_proj](https://user-images.githubusercontent.com/37953610/59445053-d82fe700-8df6-11e9-9a52-01a14bea7437.JPG)
 
 
