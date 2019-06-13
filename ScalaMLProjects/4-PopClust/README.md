@@ -166,7 +166,7 @@ You can see a youtube video for explanation:
 
 - https://www.youtube.com/watch?v=-Stzb7n2iKQ
 
-# 3. Scala Files
+# 3. Building a project using Maven + Eclipse IDE
 
 
 Follow this steps to integrate a pom file into your Scala project:
@@ -205,6 +205,8 @@ Follow this steps to integrate a pom file into your Scala project:
 
 After this create a /data folder and store there the .vcf and .panel files previously downloaded by you. Start with creating the file PopGenomicsClassificationSpark.scala .
 
+# 4. Machine Learning Models
+
 Remember: Spark expects
 
 - two columns (that is, features and label) for supervised training model,
@@ -212,7 +214,7 @@ Remember: Spark expects
 - one columns (that is, features) for unsupervised training model. 
 
 
-In the PopGenomicsClassificationSpark.scala we created a SparkDataFrame and now at PopStratClassification.scala we need to do some additional conversion. We use the asH2OFrame() method to convert the Spark DataFrame into an H2O frame:
+In the PopStratClustering.scala (k-means) we created a SparkDataFrame and now at PopStratClassification.scala (Deep Neural Network) we need to do some additional conversion. We use the as H2OFrame() method to convert the Spark DataFrame into an H2O frame:
 
     val sqlContext = sparkSession.sqlContext
     val schemaDF = sqlContext.createDataFrame(rowRDD, header)
@@ -221,4 +223,14 @@ In the PopGenomicsClassificationSpark.scala we created a SparkDataFrame and now 
     import h2oContext.implicits._
      
     val dataFrame = h2oContext.asH2OFrame(schemaDF)
+
+In PopStratClassification.scala we saw the implementation of a Deep Neural network (DNN) snd the result was not so good. To improve the results we are adjust the hyparameteres of the model or extract insights from the Random Forest model looking for the feature importance. Knowing waht are the most important features we can selected those and run again the DNN model and see if the result is improved or not.
+
+However we can use Spark to implement directly the Random Forest model (PopGenomicsClassificationSpark.scala). With this model we obtained better acurracy:
+
+- Random Forest: 0.72
+
+- DNN: 0.53
+
+We believe we can improve it adjusting the hyperparameters and eliminate the most irrelevant features.
 
