@@ -95,4 +95,21 @@ After run the _topicModellingwithLDA.scala_ file **the structure of the project*
 
 ![srt_proj](https://user-images.githubusercontent.com/37953610/59445053-d82fe700-8df6-11e9-9a52-01a14bea7437.JPG)
 
+# 2. Deploying the trained LDA model
+
+For this mini deployment, let's use a real-life dataset: PubMed. The dataset contains some abstracts of some biological articles, their
+publication year, and the serial number(ID,Year,Short abstract). A sample dataset containing PubMed terms can be downloaded from:
+
+- https://nlp.stanford.edu/software/tmt/tmt-0.4/ searching by _pubmed-oa-subset.csv_
+
+In the previous code we saved the trained LDA: 
+
+    params.ldaModel.save(spark.sparkContext, "model/LDATrainedModel")
+    
+And we have the follow folder structure:
+
+![model_str](https://user-images.githubusercontent.com/37953610/59449303-b5093580-8dfe-11e9-8e59-b3656301f6d9.JPG)
+
+To run the LDAModelReuse.scala we need to modify the folder where the new model will be saved, otherwise we will obtain an error exception due to the exting folder that was created by yhe previous code. The model results are in _TextMiningReused.txt_.
+
 
