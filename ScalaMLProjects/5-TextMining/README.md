@@ -1,4 +1,4 @@
-### 1. Topic Modeling - A Better Insight into Large-Scale Texts
+# 1. Topic Modeling - A Better Insight into Large-Scale Texts
 
 Topic modeling (TM) is a technique widely used in mining text from a large collection of
 documents. These topics can then be used to summarize and organize documents that
@@ -73,15 +73,26 @@ terminologies are worth knowing before we formally start our TM application:
 - "token": instance of a term appearing in a document
 - "topic": multinomial distribution over words representing some concept
 
-The parameteres of LDA algotim are explained here:
+The parameteres of LDA algorithm are explained here:
 
  - https://spark.apache.org/docs/2.3.0/api/java/org/apache/spark/mllib/clustering/LDA.html
  
+ 
 The dataset can be downloaded from: 
 
-https://github.com/minghui/Twitter-LDA/tree/master/data/Data4Model/test
+- https://github.com/minghui/Twitter-LDA/tree/master/data/Data4Model/test
 
 
+You need create a stopWord.txt file. It contains the english stop words. For example you can use the containt of these two files:
 
+- https://github.com/stanfordnlp/CoreNLP/blob/master/data/edu/stanford/nlp/patterns/surface/stopwords.txt
+
+- https://gist.github.com/larsyencken/1440509
+
+The model of the project was saved in _textmining.txt_ file. There we observe 
+
+After run the _topicModellingwithLDA.scala_ file **the structure of the project** is:
+
+![srt_proj](https://user-images.githubusercontent.com/37953610/59443015-31961700-8df3-11e9-809b-3a17128675e6.JPG)
 
 
