@@ -75,3 +75,31 @@ For this project, we can use the **MovieLens 100k**
 rating dataset from http://www.grouplens.org/node/73 . The training set ratings are in a
 file called _ua.base_, while the movie item data is in _u.item_ . On the other hand, _ua.test_
 contains the test set to evaluate our model.
+
+# 2- Development
+
+First we develop an algortihm to calculate the similarity between the movies. This can be found in _MovieSimilarities.scala_.
+
+Using item-based collaborative filtering, we can compute how similar two movies are to
+each other. We follow these steps:
+
+- 1. For every pair of movies (A, B), we find all the users who rated both A and B
+
+- 2. Now, using the preceding ratings, we compute a Movie A vector, say X, and a Movie B vector, say Y
+
+- 3. Then we calculate the correlation between X and Y
+
+- 4. If a user watches movie C, we can then recommend the most correlated movies with it.
+
+We then compute the various vector metrics for each ratings vector X and Y, such as size,
+dot product, norm, and so on. We will use these metrics to compute the various similarity
+metrics between pairs of movies, that is, (A, B). For each movie pair (A, B), we then
+compute several measures such as cosine similarity, Jaccard similarity correlation, and
+regularized correlation.
+
+The approach with collaborative filtering-based have **limitations**
+
+- does not have the ability to predict missing entries in real-life use cases
+
+- cold start, scalability, and sparsity. 
+
