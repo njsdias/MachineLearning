@@ -58,5 +58,15 @@ similar users.
 - Content-based filtering: By offering movies that share characteristics with films
 that a user has rated highly.
 
+Here we are implement a Collaborative filtering based methods. They are classified as:
 
+- Memory-based, that is, a user-based algorithm
 
+- Model-based collaborative filtering, that is, kernel-mapping.
+
+In this method, users and products are described by a small set of factors, also called **latent factors (LFs)**. The LFs are then used to predict the missing entries. The **Alternating Least Squares (ALS)** algorithm is used to learn these LFs.
+
+In a **hybrid recommendation system**, there are two classes of entities: users and items.  
+Now, as a user, you might have preferences for certain items. Therefore, these preferences must be extracted from data about items, users, or ratings. Often this data is represented as a **utility matrix**, such as a user-item pair. The entry in the matrix, that is, a table, can come from an ordered set. For example, integers 1-5 can be used to represent the number of stars that the user gave as a
+rating for items. This matrix can be sparce as much user don't rated the products. The goal is to
+predict the blanks in the utility matrix. 
