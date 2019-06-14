@@ -70,3 +70,8 @@ In a **hybrid recommendation system**, there are two classes of entities: users 
 Now, as a user, you might have preferences for certain items. Therefore, these preferences must be extracted from data about items, users, or ratings. Often this data is represented as a **utility matrix**, such as a user-item pair. The entry in the matrix, that is, a table, can come from an ordered set. For example, integers 1-5 can be used to represent the number of stars that the user gave as a
 rating for items. This matrix can be sparce as much user don't rated the products. The goal is to
 predict the blanks in the utility matrix. 
+
+For this project, we can use the **MovieLens 100k**
+rating dataset from http://www.grouplens.org/node/73 . The training set ratings are in a
+file called _ua.base_, while the movie item data is in _u.item_ . On the other hand, _ua.test_
+contains the test set to evaluate our model.
