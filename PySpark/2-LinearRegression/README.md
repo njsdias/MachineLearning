@@ -1,25 +1,28 @@
-### 1. Purpose
-This repository allows to learn PySpark through examples of Machine Learning Algorithms. 
+# 1. Few Considerations
 
-Content:
+it is important to go over
+these assumptions very quickly in order to know them before using the
+Linear Regression model.
+Assumptions:
 
-- data processing
+• There must be a linear relationship between the input
+variable and output variable.
 
-- linear regression
+• The independent variables (input features) should not be
+correlated to each other (also known as multicollinearity).
 
-- logistic regression
+• There must be no correlation between the residuals/
+error values.
 
-- random forest
+• There must be a linear relationship between the
+residuals and the output variable.
 
-- recommender systems
-
-- clustering: k-means
-
-- natural language processing
-
-![book](https://user-images.githubusercontent.com/37953610/59615373-4ab40600-911a-11e9-8084-e24469aea9e6.JPG)
+• The residuals/error values must be normally
+distributed.
 
 
+The majority of the time, the dataset would contain multiple variables and hence building a
+**Multivariable Regression Model** makes more sense in such a situation
      
      
 
