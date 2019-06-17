@@ -1,4 +1,4 @@
-# 1. Few Considerations
+# 1. Some Considerations
 
 it is important to go over
 these assumptions very quickly in order to know them before using the
