@@ -1,9 +1,9 @@
 ### 1. Purpose
-This repository allows to learn Spark-Scala through Machine Learning Algorithms examples. 
+This repository allows to learn PySpark through examples of Machine Learning Algorithms. 
 
-Book:
+Book: ![book](https://user-images.githubusercontent.com/37953610/59615373-4ab40600-911a-11e9-8084-e24469aea9e6.JPG)
 
-![book](https://user-images.githubusercontent.com/37953610/58999181-5b03e100-87fc-11e9-8622-0727f57e5a6d.JPG)
+
      
      
 
