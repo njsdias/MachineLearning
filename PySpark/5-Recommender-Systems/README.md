@@ -79,6 +79,7 @@ The next step is to recommend the items (movies) that this user might like based
 The **Eucledian Distance** is one option to calculate the similarity. It calculates the distance between two vectores since the user profile and item profile both are high-dimensional vectors. The higher the distance value, the less similar are the two vectors. Therefore, the distance between the user profile and all other items
 are calculated and ranked in decreasing order.
 
+
 The **Cosine Similarity** is another possibility to calculat the similarity. Instead of distance, it measures the angle
 between two vectors (user profile vector and item profile vector). The smaller the angle between both vectors, the more similar they are to each other.
 
@@ -152,3 +153,45 @@ they are likely to have the same opinion about other items as well.
 2. Item based CF: we find k-nearest items to be recommended to users
 
 ### Latent Factor based CF
+
+This kind of collaborative filtering also uses the user item matrix but
+instead of finding the nearest neighbors and predicting ratings, it tries to
+**decompose the UI matrix into two latent factor matrices**. The latent factors
+are derived values from original values. They are intrinsically related to the
+observed variables. These new matrices are much lower in terms of rank
+and contain latent factors. This is also known as **matrix factorization**.
+
+The process of finding these latent factors is done using machine learning optimization
+techniques such as **Alternating Least Squares**. The user item matrix is
+decomposed into latent factor matrices in such a way that the user rating
+for any item is the product between a user’s latent factor value and the
+item latent factor value. The main objective is to **minimize the total sum of
+squared errors** over the entire user item matrix ratings and predicted item
+ratings. This minimization is reached by training the recommendation model.
+
+**Limitations**
+
+1- Cold Start Problem
+
+2- Missing values
+
+3- Cannot recommend new or unrated items
+
+4- Poor Accuracy
+
+## Hybrid Recommender Systems
+
+The Hybrid RS include **inputs from multiple recommender systems**, making it more powerful and relevant in terms of meaningful recommendations to the users. The hybrid RS can be built in specific
+ways to suit the requirement of the business. One of the approaches is to
+build individual RS and combine the recommendations from multiple RS
+output before recommending them to the user (Recommendations from Content Based RS + Recommendations from Collaborative Filtering).
+
+The other approach is by leveraging content based recommender
+strengths and using them as input for collaborative filtering based
+recommendations to provide better recommendations to the users. This
+approach can also be reversed, and collaborative filtering can be used as
+input for content based recommendations.
+
+![hybrid_RS](https://user-images.githubusercontent.com/37953610/59790545-0ebea380-92c8-11e9-9dee-5a483705c96b.JPG)
+
+
