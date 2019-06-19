@@ -83,3 +83,41 @@ The **Cosine Similarity** is another possibility to calculat the similarity. Ins
 between two vectors (user profile vector and item profile vector). The smaller the angle between both vectors, the more similar they are to each other.
 
 ## Collaborative Filtering Based RS
+
+There are two kinds of CF:
+
+1. Nearest Neighbors based CF
+
+2. Latent Factor based CF
+
+CF based RS doesn’t require the item attributes or description for
+recommendations; instead **it works on user item interactions**. These
+interactions can be measured in various ways such as ratings, item bought, time spent, shared on another platform, etc.
+
+In real life, we suppose ask to our friends (colleagues, relatives, or community members), who are similar to us, for recommendations about restaurants, movies, book, place to travel. Our interests match in some areas and so we trust their recommendations. In real life, it’s easy to know who are the people falling in this circle, but when it comes to online recommendations, **the key task** in collaborative filtering is **to find the users who are most similar to you**. Each user can be represented by a vector that contains the feedback value of a user item interaction.
+
+The **user item matrix** is exactly what the name suggests. In the rows, we
+have all the unique users; and along the columns, we have all the unique
+items. The values are filled with feedback or interaction scores to highlight
+the liking or disliking of the user for that product. The user item matrix is generally **very sparse** as
+there are millions of items, and each user doesn’t interact with every
+item; so the matrix contains a lot of null values. There are two types of feedback that can be
+considered in the UI matrix:
+
+- Explicity Feedback: When the user gives ratings to the item
+after the interaction and has been experiencing the item features. The Explicit feedback data **contains very limited amounts of data
+points** as a very small percentage of users take out the time to give ratings even after buying or using the item. 
+
+- Implicit Feedback: It is mostly inferred from the activities of the user on the online platform and is based on interactions with items. The challenges with implicit feedback are that it contains a lot of noisy data and
+therefore doesn’t add too much value in the recommendations.
+
+### Nearest Neighbors based CF
+
+
+
+
+
+
+
+
+
