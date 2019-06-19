@@ -1,25 +1,23 @@
-### 1. Purpose
-This repository allows to learn PySpark through examples of Machine Learning Algorithms. 
+# 1. Recommender Systems
 
-Content:
+Recommender systems can be used for multiple purposes in the sense of
+recommending various things to users.
 
-- data processing
+1. Retail Products
 
-- linear regression
+2. Jobs
 
-- logistic regression
+3. Connections/Friends
 
-- random forest
+4. Movies/Music/Videos/Books/Articles
 
-- recommender systems
+5. Ads
 
-- clustering: k-means
-
-- natural language processing
-
-![book](https://user-images.githubusercontent.com/37953610/59615373-4ab40600-911a-11e9-8084-e24469aea9e6.JPG)
-
-
+The role of Recommender Systems (RS) becomes critical for recommending relevant items and
+driving customer conversion in situations where there are zilions of different products available since the user don’t like to invest a lot of time going through the entire catalogue of items.
      
-     
+Recommender systems are mainly used for auto-suggesting the right
+content or product to the right users in a personalized manner to enhance
+the overall experience. Each of the decisions of users (Positive or Negative) helps to retrain the
+RS on the latest data to be able to give even better recommendations.   
 
