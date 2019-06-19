@@ -113,11 +113,42 @@ therefore doesn’t add too much value in the recommendations.
 
 ### Nearest Neighbors based CF
 
+This CF works by **finding out** the k-nearest neighbors of users by finding
+**the most similar users who also like or dislike the same items as the
+active user** (for user we are trying to recommend). There are two steps
+involved in the nearest neighbor’s collaborative filtering:
 
+- The first step is to find k-nearest neighbors
 
+- The second step is to predict the rating or likelihood of the active user liking a particular item.
 
+The k-nearest neighbors can be found out using:
 
+- Euclidean distance
 
+- cosine similarity 
 
+- Jaccard similarity: There is a major issue with this approach, though,
+because the Jaccard similarity doesn’t consider the feedback value while
+calculating the similarity score and only considers the common items rated. For users that rated the intem  high and the other might have
+rated the intem low, the Jaccard considers they are simillary. Because of that we are considere only Euclidian and cosine methods.
 
+But we need to handel with a problem. The **sparsity of the user/item matrix**. The user item matrix would contain lot of missing values for the simple reason that there are lot of items and not every user interacts with each item. There are a couple of ways to deal with missing values in the UI matrix:
 
+1. Replace the missing value with 0s.
+
+2. Replace the missing values with average ratings of
+the user.
+
+There are, again, **two categories of Nearest Neighbors** based CF:
+
+1. User based CF: we find k-nearest users or  the
+most similar user to the active user and recommend the items that the
+similar user has bought/rated highly to the active user, which he hasn’t
+seen/bought/tried yet. The assumption that this kind of RS makes is that
+if two or more users have the same opinion about a bunch of items, then
+they are likely to have the same opinion about other items as well.
+
+2. Item based CF: we find k-nearest items to be recommended to users
+
+### Latent Factor based CF
