@@ -74,8 +74,13 @@ clustering:
 
 • Divisive Clustering (Top-Down Approach)
 
+Deciding the most optimal number of clusters while using Hierarchical clustering can be done in multiple ways. One way is to use the elbow method itself and the other option is by making use of something known as a **Dendrogram**. It is used to visualize the variability between clusters (Euclidean distance). In a Dendrogram, the height of the vertical lines represents the distance between points or clusters and data points listed along the bottom. Each point is plotted on the X-axis and the distance is represented on the Y-axis (length).
 
+There are other types of clustering that can be used to group the similar data points together such as the following:
 
+1. Gaussian Mixture Model Clustering
+
+2. Fuzzy C-Means Clustering
 
 
 
