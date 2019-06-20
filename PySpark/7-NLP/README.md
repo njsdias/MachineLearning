@@ -1,4 +1,4 @@
-### 1. Natural language processing (NLP)
+# 1. Natural language processing (NLP)
 
 The area that focuses on making machines learn and understand the textual data
 in order to perform some useful tasks is known as Natural Language
@@ -58,6 +58,22 @@ seem to add very little value to the analysis. Hence, it's always considered a g
 tokens. In PySpark, we use StopWordsRemover to remove the stopwords.
 
 ![stopwords_1](https://user-images.githubusercontent.com/37953610/59875142-e2725800-9397-11e9-81d9-6757bef4e711.JPG)
+
+
+# 2. Bag of Words
+
+All machine Learning algorithm only understand numbers. So, the Bag of Words (BOW) is the methodology through which we can represent the text data into numerical form for it to be used by Machine Learning or any other analysis.
+
+BOW (Bag of Words) allows us to convert the text form into a numerical vector
+form by considering the occurrence of the words in text documents. The documents are converted in **vocabulary** which is list of unique words appearing in all the documents. Each document can be represented by a vector of ones and zero. The 1 means that word is in that text the zero meand the word is not in the text. 
+
+However, **the BOW does not consider the order of words in the document and the semantic meaning of the word** and hence is the most baseline method to represent the text data into numerical form. words. The **count vectorizer** instead takes count of the word appearing in the particular document. As we can observe, each sentence is represented as a dense vector. It
+shows that the vector length is 11 and the first sentence contains 3 values
+at the 0th, 2nd, and 8th indexes.
+
+![count_vect](https://user-images.githubusercontent.com/37953610/59883323-8d8d0c80-93ac-11e9-9cb7-e932bf7b5c10.JPG)
+
+
 
 
 
